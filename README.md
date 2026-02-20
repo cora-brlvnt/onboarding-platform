@@ -2,9 +2,15 @@
 
 Multi-tenant client onboarding platform for Berelvant, built with Next.js, React, Tailwind CSS, and Supabase.
 
-**Built:** Feb 19, 2026  
+**Built:** Feb 19-20, 2026  
 **Deployed to:** Railway  
-**Status:** Production-Ready
+**Status:** Production-Ready (Phase 2 + Phase 3)
+
+## Phases
+
+- **Phase 1** (Feb 19): Multi-tenant SaaS with dashboard, clients, workflows, team pages
+- **Phase 2** (Feb 20): Real Supabase auth (signup/login), Clients CRUD, Workflows CRUD
+- **Phase 3** (Feb 20): Brand Assets Manager — Multi-brand, drag-drop upload, gallery, JSON export
 
 ## Quick Start (Railway)
 
@@ -261,10 +267,27 @@ Required for deployment:
 - [ ] Video onboarding
 - [ ] Mobile app
 
+## Phase 3: Brand Assets Manager Setup
+
+See [PHASE3_SETUP.md](./PHASE3_SETUP.md) for complete setup instructions.
+
+Quick steps:
+1. Run SQL migration in Supabase (creates brands + assets tables)
+2. Create `brand-assets` storage bucket in Supabase Storage
+3. Deploy Phase 3 to Railway (`git push` → auto-deploy)
+4. Access at `/brand-assets` route
+
+**Features:**
+- Multi-brand management
+- Drag-and-drop file upload
+- Asset gallery with preview
+- Auto-indexed JSON export
+- Supabase Storage integration
+
 ## Cost
 
 - **Railway:** $5/month (starter)
-- **Supabase:** Free tier for 1-10 clients
+- **Supabase:** Free tier for 1-10 clients + storage
 - **Total:** ~$5/month
 
 Scale to paid tiers as needed.

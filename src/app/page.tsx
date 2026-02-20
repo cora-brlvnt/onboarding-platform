@@ -17,6 +17,11 @@ export default function Home() {
               Dashboard
             </button>
           </Link>
+          <Link href="/brand-assets">
+            <button className="px-8 py-3 bg-slate-700 dark:bg-slate-800 text-white rounded-lg font-semibold hover:shadow-lg transition-shadow">
+              Brand Assets
+            </button>
+          </Link>
           <Link href="/auth/login">
             <button className="px-8 py-3 border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white rounded-lg font-semibold hover:bg-slate-100 dark:hover:bg-slate-900 transition-colors">
               Sign In
