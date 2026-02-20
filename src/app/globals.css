@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans antialiased;
+}
+
+/* Typography */
+h1 {
+  @apply font-serif text-4xl font-bold;
+}
+
+h2 {
+  @apply font-serif text-3xl font-bold;
+}
+
+h3 {
+  @apply font-serif text-2xl font-bold;
+}
+
+/* Button base styles */
+button {
+  @apply transition-all duration-200 ease-out;
+}
+
+/* Input base styles */
+input,
+textarea,
+select {
+  @apply transition-colors duration-200;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-slate-950 text-white;
+  }
+}
