@@ -354,8 +354,16 @@ export default function ClientsPage() {
                             key={c}
                             type="button"
                             aria-pressed={on}
+                            // Functional update, not set('channels', ...). Two chips
+                            // clicked before a re-render both read the same stale
+                            // form.channels, and the first toggle is lost.
                             onClick={() =>
-                              set('channels', on ? form.channels.filter((x) => x !== c) : [...form.channels, c])
+                              setForm((f) => ({
+                                ...f,
+                                channels: f.channels.includes(c)
+                                  ? f.channels.filter((x) => x !== c)
+                                  : [...f.channels, c],
+                              }))
                             }
                             className={`px-3 py-1 rounded-full text-xs font-medium border ${
                               on
@@ -385,7 +393,7 @@ export default function ClientsPage() {
                       key={s}
                       label={s[0].toUpperCase() + s.slice(1)}
                       value={form.social[s] || ''}
-                      onChange={(v) => set('social', { ...form.social, [s]: v })}
+                      onChange={(v) => setForm((f) => ({ ...f, social: { ...f.social, [s]: v } }))}
                     />
                   ))}
                 </div>
