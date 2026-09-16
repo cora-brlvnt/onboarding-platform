@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useBrandAssetsList } from '@/hooks/useBrandAssets';
 import Link from 'next/link';
 import { createClient } from '@supabase/supabase-js';
@@ -27,7 +27,7 @@ export default function BrandAssetsDetailPage({
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Fetch brand details
-  useState(() => {
+  useEffect(() => {
     const fetchBrand = async () => {
       const { data, error: fetchError } = await supabase
         .from('brands')

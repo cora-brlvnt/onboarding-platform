@@ -34,3 +34,6 @@ yarn-error.log*
 
 # OS
 Thumbs.db
+
+# TypeScript incremental build info (Nixpacks mounts it as a cache dir and fails)
+tsconfig.tsbuildinfo
